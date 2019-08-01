@@ -103,6 +103,7 @@ public class Janela extends javax.swing.JFrame {
     private void botaoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparActionPerformed
         campo.setText("");
         rotulo.setText("");
+        campo.requestFocus();
     }//GEN-LAST:event_botaoLimparActionPerformed
 
     private void botaoToPropertiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoToPropertiesActionPerformed
@@ -114,6 +115,8 @@ public class Janela extends javax.swing.JFrame {
         }
         novo = novo.replaceAll(" \\\\\n$", "");
         campo.setText(novo);
+        campo.requestFocus();
+        campo.selectAll();
         copiarAreaTransferecia(campo.getText());
     }//GEN-LAST:event_botaoToPropertiesActionPerformed
 
@@ -125,6 +128,8 @@ public class Janela extends javax.swing.JFrame {
             novo += x.trim().replaceAll("\\\\$", "\n").replaceAll("^\\\\$", "");
         }
         campo.setText(novo);
+        campo.requestFocus();
+        campo.selectAll();
         copiarAreaTransferecia(campo.getText());
     }//GEN-LAST:event_botaoToSQLActionPerformed
 
