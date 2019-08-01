@@ -111,7 +111,9 @@ public class Janela extends javax.swing.JFrame {
         String novo = "\\\n";
 
         for (String x : antigo.split("\n")) {
-            novo += "    " + x.trim() + " \\\n";
+            if (!x.trim().isEmpty()) {
+                novo += x + " \\\n";
+            }
         }
         novo = novo.replaceAll(" \\\\\n$", "");
         campo.setText(novo);
@@ -125,7 +127,7 @@ public class Janela extends javax.swing.JFrame {
         String novo = "";
 
         for (String x : antigo.split("\n")) {
-            novo += x.trim().replaceAll("\\\\$", "\n").replaceAll("^\\\\$", "");
+            novo += x.replaceAll(" \\\\$", "\n").replaceAll("^\\\\$", "");
         }
         campo.setText(novo);
         campo.requestFocus();
